@@ -80,7 +80,7 @@ ggplot(df_cm, aes(x = Played, y = cm_points, color = name)) +
 
 # grid
 ggplot(df_cm, aes(x = game_number, y = cm_points)) +
-  geom_line(size = 1.2, show.legend = FALSE,  color = '#E43F77') + # hide legend since facets label managers
+  geom_line(size = 1.2, show.legend = FALSE,  color = '#E43F77') + 
   labs(
     x = "With 34/35 Premier League matches played",
     y = "Cumulative Points"
@@ -91,7 +91,7 @@ ggplot(df_cm, aes(x = game_number, y = cm_points)) +
   theme_minimal(base_size = 12) +
   theme(
     element_text(family = "Palatino"),
-    strip.text = element_text(family = "Palatino", size = 12, face = "bold"),  # larger facet titles
+    strip.text = element_text(family = "Palatino", size = 12, face = "bold"),
     plot.title = element_text(family = "Palatino", size = 12, face = "bold", hjust = 0.5),
     panel.grid.minor = element_blank(),  # Remove minor gridlines
     panel.grid.major.x = element_blank(),
@@ -113,7 +113,7 @@ big6games <- result %>%
 # add cumulative points & goals
 big6games <- result %>%
   filter(name != "Michael Carrick)" & name != "Ralf Rangnick " & name != "Ruud van Nistelrooy)" & name != "Ryan Giggs") %>%
-  arrange(name, Played) %>%     # sort correctly
+  arrange(name, Played) %>%    
   group_by(name) %>%
   mutate(game_number = row_number()) %>%
   filter(HomeTeam == "Chelsea" | HomeTeam == "Man City" | HomeTeam == "Arsenal" |
